@@ -1,0 +1,9 @@
+<header>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>{{bannerMessage}}</span>
+            <span class="example-spacer"></span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</header>
+<app-stepper-test (bannerMessageUpdate)="updateBanner($event)"></app-stepper-test>

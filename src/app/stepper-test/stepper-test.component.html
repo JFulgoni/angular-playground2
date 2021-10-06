@@ -1,0 +1,52 @@
+<div class="card-wrapper">
+    <button mat-raised-button (click)="updateBanner()" color="primary">Update Banner</button>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>Stepper</mat-card-title>
+                <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+            </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-stepper [linear]="isLinear" #stepper>
+                <mat-step [stepControl]="firstStepFormGroup">
+                    <form [formGroup]="firstStepFormGroup">
+                        <ng-template matStepLabel>Enter your name</ng-template>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Name" formControlName="name" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-raised-button color="accent" matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="secondStepFormGroup">
+                    <form [formGroup]="secondStepFormGroup">
+                        <ng-template matStepLabel>Enter your address</ng-template>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Address Line 1</mat-label>
+                            <input matInput placeholder="123 Rainey Street" formControlName="addressLine1" required>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Address Line 2</mat-label>
+                            <input matInput placeholder="Apt 1A" formControlName="addressLine2" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    <p>You are now done.</p>
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-button (click)="resetStepper()">Reset</button>
+                    </div>
+                </mat-step>
+            </mat-stepper>
+        </mat-card-content>
+    </mat-card>
+</div>
