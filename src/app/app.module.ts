@@ -27,13 +27,15 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatStepperModule } from '@angular/material/stepper';
 import { HomeComponent } from './home/home.component';
 import { StepperTestComponent } from './stepper-test/stepper-test.component';
+import { GamesComponent } from './games/games.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    StepperTestComponent
+    StepperTestComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ import { StepperTestComponent } from './stepper-test/stepper-test.component';
     MatMenuModule,
     MatSidenavModule,
     MatGridListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
