@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  backend: {
+    gamesUrl: "https://www.mmobomb.com/api1"
+  }
 };
