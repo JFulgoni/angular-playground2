@@ -1,7 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 
 export interface Game {
@@ -18,35 +15,21 @@ export interface Game {
 export class GamesComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'title', 'short_description'];
-  dataSource: MatTableDataSource<Game>;
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  dataSource: Game[];
+  otherDataSource: Game[];
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.apiService.getGames().subscribe(
       gameData => {
-        this.dataSource = new MatTableDataSource(gameData);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.paginator.firstPage();
-        this.dataSource.filterPredicate = (data: Game, filter: string) => {
-          return data.title.toLowerCase().includes(filter);
-        }
+        this.dataSource = gameData;
       },
       error => {
         console.log(error);
       }
     );
+    const game1 = {id: '1', 'title': 'World of Warcraft', short_description: 'The best game ever'}
+    this.otherDataSource = [game1];
   }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
-
 }

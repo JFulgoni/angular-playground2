@@ -28,6 +28,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { HomeComponent } from './home/home.component';
 import { StepperTestComponent } from './stepper-test/stepper-test.component';
 import { GamesComponent } from './games/games.component';
+import { CardTableComponent } from './shared/card-table/card-table.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { GamesComponent } from './games/games.component';
     NavbarComponent,
     HomeComponent,
     StepperTestComponent,
-    GamesComponent
+    GamesComponent,
+    CardTableComponent
   ],
   imports: [
     BrowserModule,
