@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   backend: {
-    gamesUrl: '/games'
+    gamesUrl: '/api/games'
   }
 };
 

@@ -29,6 +29,7 @@ import { HomeComponent } from './home/home.component';
 import { StepperTestComponent } from './stepper-test/stepper-test.component';
 import { GamesComponent } from './games/games.component';
 import { CardTableComponent } from './shared/card-table/card-table.component';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CardTableComponent } from './shared/card-table/card-table.component';
     HomeComponent,
     StepperTestComponent,
     GamesComponent,
-    CardTableComponent
+    CardTableComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,9 @@
 {
-    "/games": {
+    "/api/games": {
         "target": "https://www.mmobomb.com/api1/games",
         "secure": true,
         "pathRewrite": {
-            "^/games": ""
+            "^/api/games": ""
         },
         "changeOrigin": true,
         "logLevel": "debug"
